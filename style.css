@@ -24,6 +24,11 @@ body {
     font-weight: bold;
 }
 
+.logo img {
+    height: 50px;
+    border-radius: 50%;
+}
+
 .navbar nav a {
     margin-left: 24px;
     text-decoration: none;
