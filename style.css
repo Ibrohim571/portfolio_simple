@@ -30,9 +30,16 @@ body {
     align-items: center;
 
     padding: 0 80px;
-    backdrop-filter: blur(10px);
+    background: transparent;
 
+    transition: background 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 5, 20, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
