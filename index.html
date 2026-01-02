@@ -77,52 +77,60 @@
     <section class="certificates" id="certificates">
         <h2>Certificates</h2>
 
-        <div class="certificate-grid">
+        <div class="carousel-container">
+            <button class="carousel-btn left" id="certPrev">&#10094;</button>
 
-            <a href="assets/certificates/IELTS1.pdf" target="_blank" class="certificate-card">
-                <img src="assets/certificates/certificate-previews/IELTS1_page-0001.jpg" alt="IELTS Certificate">
-                <div class="certificate-info">
-                    <h3>IELTS Preparation</h3>
-                    <p>British Council · 2024</p>
-                </div>
-            </a>
+            <div class="carousel-track" id="certTrack">
 
-            <a href="assets/certificates/suniy intellekt.pdf" target="_blank" class="certificate-card">
-                <img src="assets/certificates/certificate-previews/suniy intellekt_page-0001.jpg" alt="AI Certificate">
-                <div class="certificate-info">
-                    <h3>Artificial Intelligence</h3>
-                    <p>Udimy 2025</p>
-                </div>
-            </a>
+                <a href="assets/certificates/IELTS1.pdf" target="_blank" class="certificate-slide">
+                    <img src="assets/certificates/certificate-previews/IELTS1_page-0001.jpg" alt="IELTS Certificate">
+                    <div class="certificate-info">
+                        <h3>IELTS Preparation</h3>
+                        <p>British Council · 2024</p>
+                    </div>
+                </a>
 
-            <a href="assets/certificates/American Business.pdf" target="_blank" class="certificate-card">
-                <img src="assets/certificates/certificate-previews/American Business_page-0001.jpg"
-                    alt="YPIP Certificate">
-                <div class="certificate-info">
-                    <h3>American Business workshop</h3>
-                    <p>YPIP 2025</p>
-                </div>
-            </a>
+                <a href="assets/certificates/suniy intellekt.pdf" target="_blank" class="certificate-slide">
+                    <img src="assets/certificates/certificate-previews/suniy intellekt_page-0001.jpg"
+                        alt="AI Certificate">
+                    <div class="certificate-info">
+                        <h3>Artificial Intelligence</h3>
+                        <p>Udimy 2025</p>
+                    </div>
+                </a>
 
-            <a href="assets/certificates/typing.pdf" target="_blank" class="certificate-card">
-                <img src="assets/certificates/certificate-previews/typing.jpg" alt="Typing Certificate">
-                <div class="certificate-info">
-                    <h3>Typing speed</h3>
-                    <p>Free typing 2025</p>
-                </div>
-            </a>
+                <a href="assets/certificates/American Business.pdf" target="_blank" class="certificate-slide">
+                    <img src="assets/certificates/certificate-previews/American Business_page-0001.jpg"
+                        alt="YPIP Certificate">
+                    <div class="certificate-info">
+                        <h3>American Business workshop</h3>
+                        <p>YPIP 2025</p>
+                    </div>
+                </a>
 
-            <a href="assets/certificates/front-sertificat2.pdf" target="_blank" class="certificate-card">
-                <img src="assets/certificates/certificate-previews/front-sertificat2_page-0001.jpg"
-                    alt="Front end Certificate">
-                <div class="certificate-info">
-                    <h3>Frontend certificate</h3>
-                    <p>One million Uzbek coders 2021</p>
-                </div>
-            </a>
+                <a href="assets/certificates/typing.pdf" target="_blank" class="certificate-slide">
+                    <img src="assets/certificates/certificate-previews/typing.jpg" alt="Typing Certificate">
+                    <div class="certificate-info">
+                        <h3>Typing speed</h3>
+                        <p>Free typing 2025</p>
+                    </div>
+                </a>
 
+                <a href="assets/certificates/front-sertificat2.pdf" target="_blank" class="certificate-slide">
+                    <img src="assets/certificates/certificate-previews/front-sertificat2_page-0001.jpg"
+                        alt="Front end Certificate">
+                    <div class="certificate-info">
+                        <h3>Frontend certificate</h3>
+                        <p>One million Uzbek coders 2021</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="carousel-btn right" id="certNext">&#10095;</button>
         </div>
     </section>
+
 
 
     <section class="portfolio-feature">
@@ -204,5 +212,6 @@
         }
     });
 </script>
+<script src="slide.js"></script>
 
 </html>
