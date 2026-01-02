@@ -1,0 +1,42 @@
+/* CERTIFICATES */
+.certificates {
+    padding: 80px;
+}
+
+.certificates h2 {
+    margin-bottom: 32px;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.certificate-card {
+    background: linear-gradient(145deg, #1a0c2e, #12081f);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(185, 131, 255, 0.15);
+    transition: 0.3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(185, 131, 255, 0.35);
+}
+
+.certificate-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.certificate-card p {
+    color: #aaa;
+    margin-bottom: 6px;
+}
+
+.certificate-card span {
+    font-size: 14px;
+    color: #b983ff;
+}
