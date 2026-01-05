@@ -1,21 +1,60 @@
-const track = document.getElementById("certTrack");
-const nextBtn = document.getElementById("certNext");
-const prevBtn = document.getElementById("certPrev");
+const carousel = document.getElementById("certCarousel");
+const track = carousel.querySelector(".carousel-track");
 
-let index = 0;
-const slideWidth = 284; // card width + gap
+let isDown = false;
+let startX;
+let scrollLeft;
+let autoScroll = null;
 
-nextBtn.addEventListener("click", () => {
-  const maxIndex = track.children.length - 1;
-  if (index < maxIndex) {
-    index++;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
+// Duplicate slides for infinite loop effect
+track.innerHTML += track.innerHTML;
+
+function startAutoScroll() {
+  if (autoScroll !== null) return; // ⛔ prevent multiple intervals
+
+  autoScroll = setInterval(() => {
+    carousel.scrollLeft += 1;
+
+    if (carousel.scrollLeft >= track.scrollWidth / 2) {
+      carousel.scrollLeft = 0;
+    }
+  }, 20);
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScroll);
+  autoScroll = null;
+}
+
+// Start once
+startAutoScroll();
+
+// Pause on hover
+carousel.addEventListener("mouseenter", stopAutoScroll);
+carousel.addEventListener("mouseleave", startAutoScroll);
+
+// Drag with mouse
+carousel.addEventListener("mousedown", (e) => {
+  isDown = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+  stopAutoScroll();
 });
 
-prevBtn.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-  }
+carousel.addEventListener("mouseup", () => {
+  isDown = false;
+  startAutoScroll();
+});
+
+carousel.addEventListener("mouseleave", () => {
+  isDown = false;
+  startAutoScroll();
+});
+
+carousel.addEventListener("mousemove", (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carousel.scrollLeft = scrollLeft - walk;
 });
